@@ -113,6 +113,43 @@ a[class^="btn-"]:hover {
   margin: 0 auto 1rem auto;
 }
 
+.items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  position: relative;
+  background: #ffbc00;
+  overflow: hidden;
+}
+
+.item:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: inherit;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+          transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+  -webkit-transition: -webkit-transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: -webkit-transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1), -webkit-transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.item:hover:after {
+  -webkit-transform: scale(2) translateX(0) translateY(0) rotate(-28);
+          transform: scale(2) translateX(0) translateY(0) rotate(-28);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -350,6 +387,65 @@ img {
 #about-a .award-3 .fas {
   color: #ffbc00;
   margin: 1rem;
+}
+
+#about-b .progress {
+  overflow: hidden;
+  height: 20px;
+  background: #ccc;
+  border-radius: 5px;
+  margin-bottom: 0.3rem;
+}
+
+#about-b .progress div {
+  height: 100%;
+  background: #ffbc00;
+  color: #fff;
+  text-align: center;
+}
+
+#about-c .about-logos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+#about-c .about-logos img {
+  width: 70%;
+}
+
+#about-d .testimonials {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+}
+
+#about-d .testimonials ul {
+  list-style: none;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about-d .testimonials p {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+#about-d .testimonials img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }
 
 #main-footer {
